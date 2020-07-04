@@ -1,0 +1,20 @@
+service: my_service
+
+# Remember to install project dependencies to register the provider plugin.
+# $ npm install
+provider:
+  name: openwhisk
+
+functions:
+  soma:
+    handler: handler.soma
+    memory: 128
+    events:
+      - http:
+          path: soma
+          method: get      
+
+# extend the framework using plugins listed here:
+# https://github.com/serverless/plugins
+plugins:
+  - serverless-openwhisk
