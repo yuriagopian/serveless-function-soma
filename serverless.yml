@@ -12,7 +12,14 @@ functions:
     events:
       - http:
           path: soma
-          method: get      
+          method: get 
+  subtracao:
+    handler: handler.subtracao
+    memory: 128
+    events:
+      - http:
+          path: subtracao
+          method: get     
 
 # extend the framework using plugins listed here:
 # https://github.com/serverless/plugins
